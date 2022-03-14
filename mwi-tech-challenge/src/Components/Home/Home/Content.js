@@ -2,11 +2,16 @@ import './Content.css'
 
 const Content = (props) => {
 
+    const { content,image } = props
+
+    // console.log(content, 'here is content')
+
     return(<div className='content-container'>
-        <div><p>icon</p></div>
-        <h2 className='content-box-h2'>Text</h2>
-        <p className='content-box-text' >this is where small text will be contained</p>
-        <div className='learn-more-button'><p>learn more</p></div>
+        {/* <div><p style={{color:'#555'}}>icon</p></div> */}
+        <div className='heading-two-image'><img src={image}/></div>
+        <h2 className='heading-2'>Heading Two</h2>
+        <p className='content-box-text' >{content}</p>
+        <div className='learn-more-button'><p className='content-box-text' style={{color:'#fff'}}>learn more</p></div>
     </div>)
 }
 
