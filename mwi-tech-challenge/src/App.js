@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <header className="App-header">
       <header className="home-header" >
-        <h2 className={`header-left ${isContact ? true : 'header-left heading'}`} >header</h2>
-        <div className={`header-right ${isContact ? true : 'header-right contact'}`} onClick={() => setIsContact(!isContact)} >{isContact === true ?<a>contact</a>:<a>home</a>}</div>
+        <h2 className={`header-left ${isContact ? true : 'header-left heading'}`} >Midwestern</h2>
+        <div className={`header-right ${isContact ? true : 'header-right contact'}`}  >{isContact === true ?<a onClick={() => setIsContact(!isContact)} >contact</a>:<div><a onClick={() => setIsContact(!isContact)} >home</a><Contact /></div>}</div>
       </header>
         {isContact === true ? <Home /> : null}
         {/* <img src={logo} className="App-logo" alt="logo" />
