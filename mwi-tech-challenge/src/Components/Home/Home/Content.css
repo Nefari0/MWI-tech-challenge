@@ -1,0 +1,27 @@
+
+.content-container {
+    height: 350px;
+    width: 375px;
+    background-color: green;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+    border-radius: 2px;
+}
+
+.learn-more-button {
+    height: 50px;
+    width: 150px;
+    background-color: purple;
+}
+
+.content-box-h2 {
+    margin: 1px;
+}
+
+.content-box-text {
+    font-size: small;
+}
