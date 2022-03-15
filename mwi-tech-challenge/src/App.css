@@ -3,6 +3,7 @@
 }
 
 .App-header {
+  position: relative;
   background-color: black;
   height: 935px;
   width: 100vw;
@@ -31,6 +32,7 @@
   align-content: stretch;
 }
 
+.mobile-header-left,
 .header-right,
 .header-left {
   position: relative;
@@ -44,11 +46,23 @@
   padding-left: 40px;
 }
 
+.mobile-header-left {
+  display: none;
+}
 
+.mobile-header-right,
 .header-right {
   color: #DEBF79;
   justify-content: flex-end;
   padding-right: 40px;
+}
+
+.mobile-header-right {
+  display: none;
+}
+
+.mobile-contact-display {
+  display: none;
 }
 
 .contact {
@@ -109,10 +123,44 @@
 
   .home-header {
     max-width: 400px;
+    /* flex-direction: column; */
+    /* display: none; */
+  }
+
+  .header-left,
+  .header-right {
+    display: none;
+  }
+
+  .mobile-header-left,
+  .mobile-header-right {
+    display:inline
+  }
+  .heading-2-text {
+    position: relative;
+    /* margin: auto; */
+    margin-top: 100px;
+    right: 57px;
+    height: 300px;
+    width: 400px;
+    /* right: none; */
+    background-color: inherit;
+    padding-bottom: 40px;
   }
 
   .mwi-logo {
     width: 200px;
     height: 50px;
+  }
+
+  .mobile-contact-display {
+    position: relative;
+    /* display: flex; */
+    display: inline;
+    height: 500px;
+    width: 500px;
+    top: 100px;
+    left: 100px;
+    background-color: #DEBF79;
   }
 }
