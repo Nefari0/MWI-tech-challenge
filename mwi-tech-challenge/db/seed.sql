@@ -1,0 +1,17 @@
+-- CREATE TABLE mwi_contacts (
+--   contact_id SERIAL PRIMARY KEY,
+--   first_name VARCHAR(250),
+--   last_name VARCHAR(250),
+--   title VARCHAR(250),
+--   email VARCHAR(250),
+--   message VARCHAR(500)
+-- )
+
+-- INSERT INTO mwi_contacts (first_name,last_name,title,email,message)
+-- VALUES (
+--   'Chris',
+--   'deMontigny',
+--   'First message',
+--   'chris@chris.com',
+--   'This is the first message sent to MWI challenge'
+-- )
