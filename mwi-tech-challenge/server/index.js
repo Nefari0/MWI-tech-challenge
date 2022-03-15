@@ -21,10 +21,10 @@ app.use(
     }),
     )
     
-// app.use( express.static( __dirname + '/../build'));
-// app.get('*', (req,res) => {
-//     res.send(path.join(__dirname, '../build/index.html'))
-// })
+app.use( express.static( __dirname + '/../build'));
+app.get('*', (req,res) => {
+    res.send(path.join(__dirname, '../build/index.html'))
+})
 
 // end points
 app.get('/api/contacts/get',contactController.getContacts)
