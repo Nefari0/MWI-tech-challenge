@@ -3,6 +3,7 @@ const path = require('path')
 const session = require('express-session')
 const massive = require('massive')
 require('dotenv').config({ path: __dirname + '/../.env'})
+const contactController = require('./controllers/contactController')
 
 // server
 const { SESSION_SECRET, CONNECTION_STRING, SERVER_PORT } = process.env
@@ -20,10 +21,14 @@ app.use(
     }),
     )
     
-app.use( express.static( __dirname + '/../build'));
-app.get('*', (req,res) => {
-    res.send(path.join(__dirname, '../build/index.html'))
-})
+// app.use( express.static( __dirname + '/../build'));
+// app.get('*', (req,res) => {
+//     res.send(path.join(__dirname, '../build/index.html'))
+// })
+
+// end points
+app.get('/api/contacts/get',contactController.getContacts)
+app.post('/api/contacts/new',contactController.newContact)
 
 // massive
 massive({
