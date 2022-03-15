@@ -52,3 +52,15 @@
 .home-text {
     font-size: medium;
 }
+
+.mapped-names {
+    font-size: small;
+    color: white;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-end;
+    margin: auto;
+}
