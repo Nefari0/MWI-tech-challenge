@@ -14,7 +14,7 @@ function App() {
       <header className="home-header" >
 
         <div className={`header-left ${isContact ? true : 'header-left heading'}`}>
-          <h2><img src={MWIlogo} /></h2>
+          <h2><img className='mwi-logo' src={MWIlogo} /></h2>
           {isContact === false ? <div className='heading-2-text'><h1 className="heading-1" >Heading One</h1>
           <p className="home-text" style={{textAlign:'left',marginLeft:'40px'}}>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic , remaining essentially unchanged
