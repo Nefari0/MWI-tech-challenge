@@ -17,8 +17,8 @@ class Home extends Component {
         }
     }
 
-    componentDidMount = async () => {
-        await axios.get(`https://api.mwi.dev/content/home`).then(res => {
+    componentDidMount = () => {
+        axios.get(`https://api.mwi.dev/content/home`).then(res => {
         const { data } = res.data
             this.setState({
                 ...this.state,
