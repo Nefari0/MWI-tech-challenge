@@ -1,4 +1,5 @@
 import './Contact.css'
+import axios from 'axios'
 import react, { Component } from 'react'
 
 class Contact extends Component {
@@ -14,8 +15,23 @@ class Contact extends Component {
         }
     }
 
+    componentDidMount() {
+        axios.get(`/api/contacts/get`).then(res => {
+            
+                this.setState({
+                    contacts:res.data
+                })
+            })
+    }
+
     inputHandler = (prop,val) => {
         this.setState({[prop]:val})
+    }
+
+    sendInfo = () => {
+        // console.log('hit "sendInfo"')
+        const { firstName,lastName,title,email,message } = this.state
+        axios.post(`/api/contacts/new`,{firstName,lastName,title,email,message})
     }
 
     render() {
@@ -26,7 +42,7 @@ class Contact extends Component {
             <div className='small-input-row' ><input onChange={(e) => this.inputHandler('title',e.target.value)} className='small-input' placeholder='Title'/><input onChange={(e) => this.inputHandler('email',e.target.value)} className='small-input' placeholder='Email'/></div>
             {/* <div className='small-input-row' ><input className='large-input' /></div> */}
             <div className='small-input-row'><textarea onChange={(e) => this.inputHandler('message',e.target.value)} className='large-input' placeholder='Message' ></textarea></div>
-            <div className='submit-button'><p className='content-box-text' style={{color:'#fff'}}>Submit</p></div>
+            <div onClick={() => this.sendInfo()} className='submit-button'><p className='content-box-text' style={{color:'#fff'}}>Submit</p></div>
         </div>)
     }
 }
