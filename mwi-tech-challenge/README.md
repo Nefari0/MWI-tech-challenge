@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting started with mwi-tech-challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this application, you will need to run `npm i`
 
 ## Available Scripts
 
