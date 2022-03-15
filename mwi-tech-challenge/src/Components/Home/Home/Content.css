@@ -11,6 +11,7 @@
 	align-items: center;
 	align-content: stretch;
     border-radius: 2px;
+    margin: 10px;
 }
 
 .learn-more-button {
