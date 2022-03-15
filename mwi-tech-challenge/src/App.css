@@ -123,8 +123,6 @@
 
   .home-header {
     max-width: 400px;
-    /* flex-direction: column; */
-    /* display: none; */
   }
 
   .header-left,
@@ -138,12 +136,10 @@
   }
   .heading-2-text {
     position: relative;
-    /* margin: auto; */
     margin-top: 100px;
     right: 57px;
     height: 300px;
     width: 400px;
-    /* right: none; */
     background-color: inherit;
     padding-bottom: 40px;
   }
@@ -155,7 +151,6 @@
 
   .mobile-contact-display {
     position: relative;
-    /* display: flex; */
     display: inline;
     height: 500px;
     width: 500px;

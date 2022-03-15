@@ -1,7 +1,6 @@
 
 module.exports = {
     getContacts: async (req,res) => {
-        // console.log('you hit get contacts end point')
         const db = req.app.get('db')
         const contacts = await db.get_contacts()
         return res.status(200).send(contacts)

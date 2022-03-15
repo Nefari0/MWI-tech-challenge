@@ -4,10 +4,7 @@ const Content = (props) => {
 
     const { content,image } = props
 
-    // console.log(content, 'here is content')
-
     return(<div className='content-container'>
-        {/* <div><p style={{color:'#555'}}>icon</p></div> */}
         <div className='heading-two-image'><img src={image}/></div>
         <h2 className='heading-2'>Heading Two</h2>
         <p className='content-box-text' >{content}</p>

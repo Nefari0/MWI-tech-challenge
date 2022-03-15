@@ -17,7 +17,6 @@ class Contact extends Component {
 
     componentDidMount() {
         axios.get(`/api/contacts/get`).then(res => {
-            
                 this.setState({
                     contacts:res.data
                 })

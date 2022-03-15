@@ -2,7 +2,6 @@
 .content-container {
     height: 350px;
     width: 325px;
-    /* background-color: green; */
     background-color: #fff;
     display: flex;
 	flex-direction: column;
@@ -21,11 +20,6 @@
     background-color: #DEBF79;
 }
 
-/* .content-box-h2 {
-    margin: 1px;
-    color: #555;
-} */
-
 .content-box-text {
     font-size: small;
     color:  #858585;
@@ -34,7 +28,5 @@
 .heading-two-image {
     height: 100px;
     width: 100px;
-    /* padding: 20px; */
-    /* background-color: yellow; */
     color: #858585;
 }
