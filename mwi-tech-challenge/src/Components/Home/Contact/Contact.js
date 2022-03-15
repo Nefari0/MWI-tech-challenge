@@ -17,13 +17,13 @@ class Contact extends Component {
         this.sendInfo = this.sendInfo.bind(this)
     }
 
-    componentDidMount() {
-        axios.get(`/api/contacts/get`).then(res => {
-                this.setState({
-                    contacts:res.data
-                })
-            })
-    }
+    // componentDidMount() {
+    //     axios.get(`/api/contacts/get`).then(res => {
+    //             this.setState({
+    //                 contacts:res.data
+    //             })
+    //         })
+    // }
 
     inputHandler = (prop,val) => {
         this.setState({[prop]:val})
