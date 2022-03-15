@@ -13,6 +13,8 @@ class Contact extends Component {
             email:'',
             message:''
         }
+        this.inputHandler = this.inputHandler.bind(this)
+        this.sendInfo = this.sendInfo.bind(this)
     }
 
     componentDidMount() {
