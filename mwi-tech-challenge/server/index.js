@@ -14,17 +14,17 @@ app.use(express.json());
 
 app.use(
     session({
-        resave: true,
+        resave: false,
         saveUninitialized: true,
         secret: SESSION_SECRET,
         cookie: { maxAge: 1000 * 60 * 5 },
     }),
     )
     
-// app.use( express.static( __dirname + '/../build'));
-// app.get('*', (req,res) => {
-//     res.send(path.join(__dirname, '../build/index.html'))
-// })
+app.use( express.static( __dirname + '/../build'));
+app.get('*', (req,res) => {
+    res.send(path.join(__dirname, '../build/index.html'))
+})
 
 // end points
 app.get('/api/contacts/get',contactController.getContacts)
