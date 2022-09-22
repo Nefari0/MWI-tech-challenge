@@ -1,7 +1,7 @@
 import MWIlogo from './assets/MWI-logo.png'
 import './App.css';
 import { useState,useEffect } from 'react';
-import Home from './Components/Home/Home/Home';
+import Home from './Components/Home/Home';
 import Contact from './Components/Home/Contact/Contact';
 
 function App() {

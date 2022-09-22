@@ -1,6 +1,7 @@
 import axios from "axios";
 import './Home.css'
 import react, { Component } from 'react'
+// import Content from "../Home/Content";
 import Content from "./Content";
 
 class Home extends Component {
