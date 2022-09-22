@@ -1,10 +1,12 @@
 .App {
   text-align: center;
+  background-color: #222222;
+  width: 100vw;
 }
 
 .App-header {
   position: relative;
-  background-color: black;
+  /* background-color: black; */
   height: 935px;
   width: 100vw;
   display: flex;
@@ -15,12 +17,13 @@
 }
 
 .home {
+  margin:auto;
   height: 1000px;
-  width: 1200px;
+  max-width: 1200px;
   background-color: #222222;
 }
 
-.home-header {
+/* .home-header {
   width: 1200px;
   height: 100px;
   background-color: #222222;
@@ -30,7 +33,7 @@
   justify-content: space-around;
   align-items: center;
   align-content: stretch;
-}
+} */
 
 .mobile-header-left,
 .header-right,
@@ -110,11 +113,11 @@
 }
 
 @media(max-width:1000px){
-  .App-header {
+  /* .App-header {
     min-height: 1600px;
     flex-direction: column;
     margin: auto;
-  }
+  } */
 
   .home {
     width: 400px;
