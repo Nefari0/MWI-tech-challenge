@@ -1,5 +1,3 @@
-import { css } from 'styled-components'
-
 export const colors = {
     gold:'#DEBF79',
     darkGray: '#222222',
