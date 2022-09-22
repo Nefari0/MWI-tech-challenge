@@ -1,5 +1,5 @@
 
-.contact-page {
+/* .contact-page {
     position: absolute;
     bottom: 100px;
     right: 75px;
@@ -11,7 +11,7 @@
     justify-content: space-around;
 	align-items: flex-start;
 	align-content: flex-end;
-}
+} */
 
 .log-form-length {
     width: 80%;
@@ -33,7 +33,7 @@
 	align-items: center;
 	align-content: center;
 }
-.large-input,
+/* .large-input, */
 .small-input {
     margin: 10px;
     height: 33px;
@@ -44,14 +44,14 @@
     border-radius: 2px;
 }
 
-.large-input {
+/* .large-input {
     margin: 10px;
     width: 90%;
     height: 60px;
     text-decoration: overline;
     font-size: 20px;
     text-align: top;
-}
+} */
 
 .submit-button {
     height: 50px;

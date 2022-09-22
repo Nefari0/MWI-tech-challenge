@@ -1,6 +1,8 @@
 import './Contact.css'
 import axios from 'axios'
 import react, { Component } from 'react'
+import FormInput from '../Form/FormInput'
+import { Group,Message,Form } from '../Form/FormInput.styles'
 
 class Contact extends Component {
     constructor() {
@@ -17,16 +19,9 @@ class Contact extends Component {
         this.sendInfo = this.sendInfo.bind(this)
     }
 
-    // componentDidMount() {
-    //     axios.get(`/api/contacts/get`).then(res => {
-    //             this.setState({
-    //                 contacts:res.data
-    //             })
-    //         })
-    // }
-
-    inputHandler = (prop,val) => {
-        this.setState({[prop]:val})
+    inputHandler = (e) => {
+        const {name,value} = e.target
+        this.setState({[name]:value})
     }
 
     sendInfo = () => {
@@ -36,27 +31,57 @@ class Contact extends Component {
 
     render() {
 
-        return(<div className='contact-page'>
-            <h2 className='heading-2' style={{marginLeft:'22px'}} >Heading Two</h2>
+        const { email,title,firstName,lastName } = this.state
 
-            <div className='small-input-row' >
-                <input onChange={(e) => this.inputHandler('firstName',e.target.value)} className='small-input' placeholder='First Name'/>
-                <input onChange={(e) => this.inputHandler('lastName',e.target.value)}className='small-input' placeholder='Last Name' />
-            </div>
+        return(
+            <Form >
+                <h2 className='heading-2' style={{marginLeft:'22px'}} >Heading Two</h2>
 
-            <div className='small-input-row' >
-                <input onChange={(e) => this.inputHandler('title',e.target.value)} className='small-input' placeholder='Title'/>
-                <input onChange={(e) => this.inputHandler('email',e.target.value)} className='small-input' placeholder='Email'/>
-            </div>
+                <FormInput
+                    label='First Name'
+                    name='firstName'
+                    type='text'
+                    required
+                    onChange={this.inputHandler} 
+                    value={firstName}
+                />
 
-            <div className='small-input-row'>
-                <textarea onChange={(e) => this.inputHandler('message',e.target.value)} className='large-input' placeholder='Message' ></textarea>
-            </div>
+                <FormInput
+                    label='Last Name'
+                    name='lastName'
+                    type='text'
+                    required
+                    onChange={this.inputHandler} 
+                    value={lastName}
+                />
 
-            <div onClick={() => this.sendInfo()} className='submit-button'>
-                <p className='content-box-text' style={{color:'#fff'}}>Submit</p>
-            </div>
-        </div>)
+<FormInput
+                    label='Title'
+                    name='title'
+                    type='text'
+                    required
+                    onChange={this.inputHandler} 
+                    value={title}
+                />
+
+                <FormInput
+                    label='Email'
+                    name='email'
+                    type='text'
+                    required
+                    onChange={this.inputHandler} 
+                    value={email}
+                />
+
+                <Group>
+                    <Message onChange={(e) => this.inputHandler('message',e.target.value)} placeholder='Message' ></Message>
+                </Group>
+               
+                <div onClick={() => this.sendInfo()} className='submit-button'>
+                    <p className='content-box-text' style={{color:'#fff'}}>Submit</p>
+                </div>
+            </Form>
+        )
     }
 }
 
