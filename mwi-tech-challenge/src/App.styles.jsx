@@ -1,14 +1,20 @@
 import styled from "styled-components";
+import { colors } from "./Components/Styles/colors";
+import { device, size } from "./Components/Styles/queries";
+const { darkGray } = colors
 
 export const AppContainer = styled.main`
     text-align: center;
-    background-color: #222222;
-    min-width: 400px;
-    /* max-width: 1200px; */
+    background-color: ${darkGray};
+    width:${size.desktop};
     margin:auto;
-    /* position: relativ; */
-    /* padding-left:200px; */
-    min-height: 100vh;
+    overflow:scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     display: flex;
     flex-direction: column;
+
+    @media ${device.query} {
+        width:${size.mobile}
+    }
 `
