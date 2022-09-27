@@ -10,8 +10,8 @@
 	align-content: stretch;
 } */
 
-.home-row-2,
-.home-row-1 {
+.home-row-2 {
+
     min-height: 60%;
     width: 100%;
     /* background-color: blue; */
@@ -34,9 +34,9 @@
 	align-content: stretch;
 }
 
-.home-text {
+/* .home-text {
     font-size: medium;
-}
+} */
 
 .mapped-names {
     font-size: small;
@@ -52,10 +52,9 @@
 }
 
 @media (max-width:1000px){
-    .home-row-1 {
+    /* .home-row-1 {
         flex-direction: column;
-        /* width: 300px; */
-    }
+    } */
     .home-row-2 {
         width: 300px;
         flex-wrap: wrap;

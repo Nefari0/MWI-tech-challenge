@@ -1,8 +1,10 @@
 import axios from "axios";
 import './Home.css'
-import react, { Component } from 'react'
-// import Content from "../Home/Content";
+import { Component } from 'react'
 import Content from "./Content";
+import { HeadingOne } from "../HeadOne/headingone.component";
+import { HomePage } from "./home.styles";
+import { HomeContent } from "./home.styles";
 
 class Home extends Component {
     constructor() {
@@ -56,19 +58,16 @@ class Home extends Component {
             return <p style={{color:'white'}} key={el.id} name={el.name} >{el.name}</p>
         })
 
-        return(<div className="home">
-            <section className="home-row-1">
-                {mappedData}
-            </section>
+        return (
+            <HomePage>
 
-            <section className="home-row-2" >
-                <h1 className="heading-1" >Heading One</h1>
-                <p className="home-text" style={{textAlign:'left',marginLeft:'40px'}}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic , remaining essentially unchanged<a onClick={() => this.executeGetNames()} style={{color:'#DEBF79'}}>  link</a>.
-                </p>
-            <div className="mapped-names">{mappedNames}</div>
-            </section>
-        </div>)
+            <HomeContent>
+                {mappedData}
+            </HomeContent>
+
+            <HeadingOne />
+
+        </HomePage>)
     }
 }
 
