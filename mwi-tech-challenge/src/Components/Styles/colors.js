@@ -4,4 +4,5 @@ export const colors = {
     midGray: '#858585',
     lightGray: '#F5F5F5',
     red:'#800000',
+    white:'#fff'
 }
