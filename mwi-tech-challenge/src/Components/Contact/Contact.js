@@ -1,8 +1,9 @@
 import './Contact.css'
 import axios from 'axios'
-import react, { Component } from 'react'
-import FormInput from '../Form/FormInput'
-import { Group,Message,Form } from '../Form/FormInput.styles'
+import { Component } from 'react'
+import FormInput from './Form/FormInput'
+import { Message,Form } from './Form/FormInput.styles'
+import { ContactPage } from './contact.styles'
 
 class Contact extends Component {
     constructor() {
@@ -34,8 +35,9 @@ class Contact extends Component {
         const { email,title,firstName,lastName } = this.state
 
         return(
+            <ContactPage>
             <Form >
-                <h2 className='heading-2' style={{marginLeft:'22px'}} >Heading Two</h2>
+                <h2 style={{width:'100%'}} >Heading Two</h2>
 
                 <FormInput
                     label='First Name'
@@ -55,7 +57,7 @@ class Contact extends Component {
                     value={lastName}
                 />
 
-<FormInput
+                <FormInput
                     label='Title'
                     name='title'
                     type='text'
@@ -73,14 +75,13 @@ class Contact extends Component {
                     value={email}
                 />
 
-                <Group>
-                    <Message onChange={(e) => this.inputHandler('message',e.target.value)} placeholder='Message' ></Message>
-                </Group>
+                <Message onChange={(e) => this.inputHandler(e)} placeholder='Message' ></Message>
                
                 <div onClick={() => this.sendInfo()} className='submit-button'>
                     <p className='content-box-text' style={{color:'#fff'}}>Submit</p>
                 </div>
             </Form>
+            </ContactPage>
         )
     }
 }

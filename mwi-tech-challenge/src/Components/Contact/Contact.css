@@ -1,5 +1,5 @@
 
-/* .contact-page {
+ /* .contact-page {
     position: absolute;
     bottom: 100px;
     right: 75px;
@@ -11,7 +11,7 @@
     justify-content: space-around;
 	align-items: flex-start;
 	align-content: flex-end;
-} */
+}  */
 
 .log-form-length {
     width: 80%;
@@ -62,14 +62,14 @@
 }
 
 @media(max-width:1000px) {
-    .contact-page {
+    /* .contact-page {
         position: relative;
         background-color: #fff;
         width: 400px;
         height: 650px;
         margin-left: 19px;
         padding-top: 30px;
-    }
+    } */
 
     .small-input-row {
         flex-direction: column;
