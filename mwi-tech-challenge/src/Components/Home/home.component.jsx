@@ -1,8 +1,7 @@
 import axios from "axios";
-import './Home.css'
 import { Component } from 'react'
-import Content from "./Content";
-import { HeadingOne } from "../HeadOne/headingone.component";
+import Content from "./HomeCard/content.component.";
+import { HeadingOne } from "../HeadingOne/heading-one.component";
 import { HomePage } from "./home.styles";
 import { HomeContent } from "./home.styles";
 
@@ -54,7 +53,6 @@ class Home extends Component {
         })
 
         const mappedNames = nameArray.map(el => {
-            console.log(el.name)
             return <p style={{color:'white'}} key={el.id} name={el.name} >{el.name}</p>
         })
 
@@ -65,7 +63,14 @@ class Home extends Component {
                 {mappedData}
             </HomeContent>
 
-            <HeadingOne />
+            <HeadingOne title={'Heading One'}>
+                Remove the duplicates in 2 Javascript arrays,
+                add the results to an array and output the list of distinct
+                names in an unordered list below this paragraph when{' '}
+                <a onClick={this.executeGetNames}>this link</a> is clicked. If the
+                operation has been completed already, notify the user that this
+                has already been done.
+            </HeadingOne>
 
         </HomePage>)
     }

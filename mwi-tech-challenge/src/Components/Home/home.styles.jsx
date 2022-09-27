@@ -6,6 +6,7 @@ export const HomePage = styled.div`
     margin:auto;
     height: 1000px;
     background-color: #222222;
+    position:absolute;
 
     @media ${device.query} {
         width: 400px;
@@ -14,12 +15,13 @@ export const HomePage = styled.div`
 `
 export const HomeContent = styled.section`
     width: 100%;
+    margin-top:100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     align-content: stretch;
 
-@media ${device.query} {
-    flex-direction: column;
-}
+    @media ${device.query} {
+        flex-direction: column;
+    }
 `
