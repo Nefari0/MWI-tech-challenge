@@ -4,13 +4,13 @@ import { device,size } from "../Styles/queries";
 const { gold } = colors
 
 export const Nav = styled.nav`
-    width:100vw;
-    max-width:${size.desktop};
+    width:${size.desktop};
     margin:auto;
     height:100px;
     display:flex;
     justify-content: space-between;
     align-items:center;
+    z-index:1000;
     
     a {
         color:${gold};
