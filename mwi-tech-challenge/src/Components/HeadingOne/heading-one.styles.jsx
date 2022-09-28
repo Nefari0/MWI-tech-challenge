@@ -8,7 +8,6 @@ const smallPixelSlice = parseInt(mobileW.split(/([0-9]+)/)[1]) - 100 // For padd
 const largePixelSlice = parseInt(desktopW.split(/([0-9]+)/)[1]) -100
 
 export const HeadOne = styled.header`
-    ${({theWidth}) => console.log(theWidth())}
     width:${({theWidth}) => largePixelSlice-theWidth()}px;
     position:relative;
     padding-left:50px;
