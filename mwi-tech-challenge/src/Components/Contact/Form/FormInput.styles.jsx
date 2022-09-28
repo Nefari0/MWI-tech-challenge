@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { colors } from '../../Styles/colors';
 import { device } from '../../Styles/queries';
 const { query } = device
-const { lightGray,darkGray } = colors
+const { lightGray,darkGray,midGray,white } = colors
 
 const shrinkLabelStyles = css`
     top: -10px;
@@ -10,7 +10,7 @@ const shrinkLabelStyles = css`
 `;
 
 export const FormInputLabel = styled.label`
-    color: ${darkGray};
+    color: ${midGray};
     font-size: 16px;
     font-weight: normal;
     position: absolute;
@@ -46,8 +46,9 @@ export const Input = styled.input`
 `;
 
 export const Message = styled(Input)`
-    width:90%;
-    height:100px;
+    width:95%;
+    height:50px;
+    @media ${query} {width:90%;}
 `;
 
 export const Group = styled.div`
@@ -56,20 +57,28 @@ export const Group = styled.div`
     margin:auto;
     margin-top:-10px;
     position: relative;
+
+    @media ${query} {width:100%;}
 `;
 
+export const LargeGroup = styled(Group)`
+    width:100%;
+`
+
 export const Form = styled.form`
-    position: absolute;
+    // position: absolute;
     margin:auto;
-    height: 500px;
-    padding-top:200px;
-    padding-bottom:200px;
+    height: 100%;
     width: 600px;
-    background-color: #fff;
+    background-color: ${white};
     right: 0px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    button {
+        margin:auto;
+    }
 
     @media ${query} {
         position: relative;
@@ -79,6 +88,7 @@ export const Form = styled.form`
         margin-left: 19px;
         margin:auto;
         padding-top: 30px;
+        flex-direction:column;
     }
     
 `;
