@@ -2,16 +2,17 @@ import styled from "styled-components";
 import { colors } from "../Styles/colors";
 import { size,device } from "../Styles/queries";
 
-const {mobile,desktop} = size
+const {mobileW,desktopW} = size
 const { darkGray,white,gold } = colors
-const smallPixelSlice = parseInt(size.mobile.split(/([0-9]+)/)[1]) - 100 // For padding
-const largePixelSlice = parseInt(size.desktop.split(/([0-9]+)/)[1]) -100
+const smallPixelSlice = parseInt(mobileW.split(/([0-9]+)/)[1]) - 100 // For padding
+const largePixelSlice = parseInt(desktopW.split(/([0-9]+)/)[1]) -100
 
 export const HeadOne = styled.header`
-    width: ${largePixelSlice}px;
+    ${({theWidth}) => console.log(theWidth())}
+    width:${({theWidth}) => largePixelSlice-theWidth()}px;
+    position:relative;
     padding-left:50px;
     padding-right:50px;
-    margin:auto;
     text-align:left;
     display: flex;
     flex-direction:column;
