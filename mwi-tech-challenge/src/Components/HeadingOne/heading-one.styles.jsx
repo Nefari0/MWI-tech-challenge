@@ -17,11 +17,14 @@ export const HeadOne = styled.header`
     display: flex;
     flex-direction:column;
     align-items: flex-start;
+    justify-content:center;
+    height:100%;
     background-color:${darkGray};
     color:${white};
 
     @media ${device.query} {
         width:${smallPixelSlice}px;
+        padding-top:100px;
     }
 
     h1 {
