@@ -6,7 +6,7 @@ import { HomePage } from "./home.styles";
 import { HomeContent } from "./home.styles";
 import { Notice } from "../Styles/Notice/notice.component";
 
-const Home = () => {
+const Home = ({isContact}) => {
 
     const [state,setState] = useState({
         data:[],
@@ -66,7 +66,10 @@ const Home = () => {
                 {mappedData}
             </HomeContent>
 
-            <HeadingOne title={'Heading One'}>
+            <HeadingOne
+                title={'Heading One'}
+                isContact={isContact}
+            >
                 Remove the duplicates in 2 Javascript arrays,
                 add the results to an array and output the list of distinct
                 names in an unordered list below this paragraph when{' '}

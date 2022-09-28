@@ -1,8 +1,12 @@
 export const size = { // --- Pixels
-    mobile: '400px',
-    desktop:'1200px'
+    mobileW: '400px',
+    desktopW:'1200px'
+}
+
+export const screenHeight = {
+    desktopHeight:'800px'
 }
 
 export const device = {
-    query: `(max-width: ${size.desktop})`,
+    query: `(max-width: ${size.desktopW})`,
 };

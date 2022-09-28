@@ -8,7 +8,7 @@ const NavBar = ({isContact,setIsContact}) => {
         <Nav>
             <img src={MWIlogo} />
             <a onClick={() => setIsContact(!isContact)}>
-                {isContact ? 'contact':'home'}
+                {isContact ? 'Home':'Contact'}
             </a>
         </Nav>
     )

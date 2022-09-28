@@ -2,15 +2,18 @@ import styled from "styled-components";
 import { colors } from "../Styles/colors";
 import { device,size } from "../Styles/queries";
 const { gold } = colors
+const { mobileW,desktopW } = size
 
 export const Nav = styled.nav`
-    width:${size.desktop};
+    width:${desktopW};
     margin:auto;
     height:100px;
     display:flex;
     justify-content: space-between;
     align-items:center;
     z-index:1000;
+    position:absolute;
+    top:0;
     
     a {
         color:${gold};
@@ -21,7 +24,7 @@ export const Nav = styled.nav`
 
     
     @media ${device.query} {
-        width:${size.mobile};
+        width:${mobileW};
         img {width:300px;}
     }
 `
