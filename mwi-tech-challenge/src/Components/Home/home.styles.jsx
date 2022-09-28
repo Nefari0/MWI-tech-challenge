@@ -15,7 +15,7 @@ export const HomePage = styled.div`
         // min-height: 1500px;
     }
 `
-export const HomeContent = styled.section`
+export const HomeContent = styled.div`
     width: 100%;
     margin-top:100px;
     display: flex;

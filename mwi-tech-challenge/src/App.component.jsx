@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Home from './Components/Home/home.component';
 import Contact from './Components/Contact/contact.component';
 import NavBar from './Components/Nav/nav.component';
-import { AppContainer,ViewPort } from './App.styles';
+import { AppContainer } from './App.styles';
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
   return (
 
     <AppContainer>
-      <ViewPort>
+      <section>
         <NavBar
           isContact={isContact}
           setIsContact={setIsContact}
@@ -28,7 +28,7 @@ function App() {
             setIsContact={setIsContact}
           />
         }
-      </ViewPort>
+      </section>
     </AppContainer>
   );
 };
