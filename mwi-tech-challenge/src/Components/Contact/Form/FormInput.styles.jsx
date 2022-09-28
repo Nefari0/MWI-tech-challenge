@@ -66,12 +66,11 @@ export const LargeGroup = styled(Group)`
 `
 
 export const Form = styled.form`
-    // position: absolute;
     margin:auto;
-    height: 100%;
-    width: 600px;
+    min-height: 600px;
+    width: 570px;
+    padding:30px;
     background-color: ${white};
-    right: 0px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -82,13 +81,11 @@ export const Form = styled.form`
 
     @media ${query} {
         position: relative;
-        background-color: #fff;
-        width: 400px;
-        height: 650px;
-        margin-left: 19px;
+        background-color: ${white};
+        width: 350px;
         margin:auto;
-        padding-top: 30px;
         flex-direction:column;
+        flex-wrap:nowrap;
     }
     
 `;
