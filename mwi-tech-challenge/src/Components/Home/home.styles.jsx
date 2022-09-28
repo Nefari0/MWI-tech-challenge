@@ -7,10 +7,8 @@ const { desktopW } = size
 export const HomePage = styled.div`
     width:${desktopW};
     margin:auto;
-    // height: 1000px;
     background-color: ${darkGray};
     position:absolute;
-    // position:relative;
 
     @media ${device.query} {
         width: 400px;
