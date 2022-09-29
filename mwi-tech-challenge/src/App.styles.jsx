@@ -22,6 +22,7 @@ export const AppContainer = styled.main`
         scrollbar-width: none;  /* Firefox */
         position:relative;
         width:${desktopW};
+        min-height:100vh;
         background-color:${darkGray};
         margin:auto;
         display: flex;
