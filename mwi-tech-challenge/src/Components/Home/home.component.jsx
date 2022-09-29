@@ -1,13 +1,15 @@
 import axios from "axios";
 import {useEffect,useState} from 'react'
+import { connect } from 'react-redux'
+import { setMessage } from "../../dux/noticeReducer";
 import Content from "./HomeCard/content.component.";
 import { HeadingOne } from "../HeadingOne/heading-one.component";
 import { HomeContent,NameRow,HomePage } from "./home.styles";
-import { Notice } from "../Notice/notice.component";
 import { colors } from "../Styles/colors";
 const { darkGray,white } = colors
 
-const Home = ({isContact}) => {
+const Home = (props) => {
+    const { isContact } = props
 
     const [state,setState] = useState({
         data:[],
@@ -19,11 +21,10 @@ const Home = ({isContact}) => {
         nameObj1:"Matt Johnson,Matt Johnson,Bart Paden,Ryan Doss,Jared Malcolm",
         nameObj2:"Matt Johnson,Bart Paden,Bart Paden,Jordan Heigle,Jordan Heigle,Tyler Viles",
         newNameArray:[],
-        notice:null,
         clicked:false
     })
 
-    var { nameObj1,nameObj2,data,images,newNameArray,notice,clicked } = state
+    var { nameObj1,nameObj2,data,images,newNameArray,clicked } = state
 
     useEffect(() => {
         intitialize()
@@ -42,15 +43,11 @@ const Home = ({isContact}) => {
         })
     }
 
-    const closeNotice = () => { // -- Function for closing Notice component
-        setState({...state,notice:''})
-    }
-
     const clickLink = () => {
         if (clicked === false) {
             setState({...state,clicked:true})
         } else if (clicked === true) {
-            setState({...state,notice:'You already clicked this link'})
+            props.setMessage('You already clicked this link')
         }
     }
 
@@ -83,11 +80,6 @@ const Home = ({isContact}) => {
     return (
         <HomePage>
 
-            {notice && <Notice
-                text={notice}
-                clearNotice={closeNotice}
-            />}
-
             <HomeContent>
                 {mappedData}
             </HomeContent>
@@ -116,4 +108,8 @@ const Home = ({isContact}) => {
     )
 }
 
-export default Home
+function mapStateToProps(reduxState){
+    return reduxState
+  }
+  
+export default connect(mapStateToProps, { setMessage })(Home)
