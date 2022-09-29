@@ -5,5 +5,5 @@ export const size = { // --- Pixels
 }
 
 export const device = {
-    query: `(max-width: ${size.desktopW})`,
+    desktop: `(max-width: ${size.desktopW})`,
 };

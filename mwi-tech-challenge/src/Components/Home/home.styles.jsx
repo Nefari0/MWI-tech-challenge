@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { size,device } from "../Styles/queries";
 import { colors } from "../Styles/colors";
 const { darkGray } = colors
-const { desktopW } = size
+const { desktopW,mobileW } = size
+const { desktop } = device
 
 export const HomePage = styled.div`
     width:${desktopW};
@@ -10,9 +11,8 @@ export const HomePage = styled.div`
     background-color: ${darkGray};
     position:absolute;
 
-    @media ${device.query} {
-        width: 400px;
-        // min-height: 1500px;
+    @media ${desktop} {
+        width: ${mobileW};
     }
 `
 export const HomeContent = styled.div`
@@ -23,7 +23,7 @@ export const HomeContent = styled.div`
     align-items: center;
     align-content: stretch;
 
-    @media ${device.query} {
+    @media ${desktop} {
         flex-direction: column;
     }
 `

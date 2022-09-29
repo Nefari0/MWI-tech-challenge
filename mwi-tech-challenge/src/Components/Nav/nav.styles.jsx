@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../Styles/colors";
 import { device,size } from "../Styles/queries";
+const { desktop } = device
 const { gold } = colors
 const { mobileW,desktopW } = size
 
@@ -23,7 +24,7 @@ export const Nav = styled.nav`
     }
 
     
-    @media ${device.query} {
+    @media ${desktop} {
         width:${mobileW};
         img {width:300px;}
     }

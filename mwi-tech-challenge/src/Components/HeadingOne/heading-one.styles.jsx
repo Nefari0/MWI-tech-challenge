@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors } from "../Styles/colors";
 import { size,device } from "../Styles/queries";
 
+const { desktop } = device
 const {mobileW,desktopW} = size
 const { darkGray,white,gold } = colors
 const smallPixelSlice = parseInt(mobileW.split(/([0-9]+)/)[1]) - 100 // For padding
@@ -21,7 +22,7 @@ export const HeadOne = styled.header`
     background-color:${darkGray};
     color:${white};
 
-    @media ${device.query} {
+    @media ${desktop} {
         width:${smallPixelSlice}px;
         padding-top:100px;
     }

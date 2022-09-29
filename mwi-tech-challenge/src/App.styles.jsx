@@ -3,21 +3,23 @@ import { device, size } from "./Components/Styles/queries";
 import { colors } from './Components/Styles/colors'
 const { darkGray,black } = colors
 const { mobileW,desktopW } = size
+const { desktop } = device
 
 export const AppContainer = styled.main`
     text-align: center;
     background-color:${black};
-    // min-height:1000px;
-    max-height:100vh;
     height:auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     overflow:hidden;
+    @media ${desktop} {
+        min-width:${mobileW};
+        margin:auto;
+    }
 
     section {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
-        // positon:absolute;
         position:relative;
         width:${desktopW};
         min-height:100vh;
@@ -28,7 +30,9 @@ export const AppContainer = styled.main`
         overflow:auto;
         z-index:10000;
         
-        @media ${device.query} {width:${mobileW};}
+        @media ${desktop} {
+            width:${mobileW};
+        }
     }
 
     a {cursor: pointer;}

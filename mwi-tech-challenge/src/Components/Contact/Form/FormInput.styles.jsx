@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { colors } from '../../Styles/colors';
 import { device } from '../../Styles/queries';
-const { query } = device
+const { desktop } = device
 const { lightGray,darkGray,midGray,white } = colors
 
 const shrinkLabelStyles = css`
@@ -48,7 +48,7 @@ export const Input = styled.input`
 export const Message = styled(Input)`
     width:95%;
     height:50px;
-    @media ${query} {width:90%;}
+    @media ${desktop} {width:90%;}
 `;
 
 export const Group = styled.div`
@@ -58,7 +58,7 @@ export const Group = styled.div`
     margin-top:-10px;
     position: relative;
 
-    @media ${query} {width:100%;}
+    @media ${desktop} {width:100%;}
 `;
 
 export const LargeGroup = styled(Group)`
@@ -79,7 +79,7 @@ export const Form = styled.form`
         margin:auto;
     }
 
-    @media ${query} {
+    @media ${desktop} {
         position: relative;
         background-color: ${white};
         width: 350px;
