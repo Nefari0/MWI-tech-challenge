@@ -27,3 +27,13 @@ export const HomeContent = styled.div`
         flex-direction: column;
     }
 `
+
+export const NameRow = styled.div`
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    margin:auto;
+    height:150px;
+
+    p {margin:2px;}
+`
