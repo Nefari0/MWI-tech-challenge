@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { setSpinner } from '../../dux/isLoadingReducer'
+import { setMessage } from '../../dux/noticeReducer'
 import { useState } from 'react'
 import FormInput from './Form/FormInput'
 import TextEditor from './Form/TextEditor'
@@ -10,19 +11,19 @@ import { BaseButton } from '../Styles/BaseButton/button.styles'
 import { HeadingTwo } from '../Styles/HeadingTwo/heading-two.component'
 import { HeadingOne } from '../HeadingOne/heading-one.component'
 
+const initialState = {
+    firstName:'',
+    lastName:'',
+    title:'',
+    email:'',
+    message:''
+}
+
 const Contact = (props) => {
     
-    const [state,setState] = useState({
-        firstName:'',
-        lastName:'',
-        title:'',
-        email:'',
-        message:''
-    })
-
+    const [state,setState] = useState(initialState)
     const { email,title,firstName,lastName,message } = state;
     const { isContact } = props
-    const { isLoading } = props.isLoading
 
     const inputHandler = (e) => {
         const {name,value} = e.target
@@ -34,6 +35,8 @@ const Contact = (props) => {
         props.setSpinner(true)
         await axios.post(`/api/contacts/new`,{firstName,lastName,title,email,message}).then(() => {
             props.setSpinner(false)
+            props.setMessage(`Message from ${firstName} has been recived`)
+            setState(initialState)
         })
     }
 
@@ -104,11 +107,8 @@ const Contact = (props) => {
     
 }
 
-// export default Contact
-
 function mapStateToProps(reduxState){
     return reduxState
   }
   
-  export default connect(mapStateToProps, { setSpinner })(Contact)
-  
+export default connect(mapStateToProps, { setSpinner,setMessage })(Contact)
