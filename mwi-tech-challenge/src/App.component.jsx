@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import isLoadingReducer from './dux/isLoadingReducer';
+import {setSpinner} from './dux/isLoadingReducer';
 import { connect } from 'react-redux'
 import Home from './Components/Home/home.component';
 import Contact from './Components/Contact/contact.component';
@@ -44,4 +44,4 @@ function mapStateToProps(reduxState){
   return reduxState
 }
 
-export default connect(mapStateToProps, { isLoadingReducer })(App)
+export default connect(mapStateToProps, { setSpinner })(App)

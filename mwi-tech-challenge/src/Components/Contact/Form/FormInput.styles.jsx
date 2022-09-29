@@ -74,6 +74,7 @@ export const Form = styled.form`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    z-index:0;
 
     button {
         margin:auto;

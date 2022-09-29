@@ -1,33 +1,40 @@
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { setSpinner } from '../../dux/isLoadingReducer'
 import { useState } from 'react'
 import FormInput from './Form/FormInput'
 import TextEditor from './Form/TextEditor'
-import { Message,Form } from './Form/FormInput.styles'
+import { Form } from './Form/FormInput.styles'
 import { ContactPage } from './contact.styles'
 import { BaseButton } from '../Styles/BaseButton/button.styles'
 import { HeadingTwo } from '../Styles/HeadingTwo/heading-two.component'
 import { HeadingOne } from '../HeadingOne/heading-one.component'
 
-const Contact = ({isContact}) => {
+const Contact = (props) => {
+    
+    const [state,setState] = useState({
+        firstName:'',
+        lastName:'',
+        title:'',
+        email:'',
+        message:''
+    })
 
-        const [state,setState] = useState({
-            firstName:'',
-            lastName:'',
-            title:'',
-            email:'',
-            message:''
-        })
-
-        const { email,title,firstName,lastName,message } = state;
+    const { email,title,firstName,lastName,message } = state;
+    const { isContact } = props
+    const { isLoading } = props.isLoading
 
     const inputHandler = (e) => {
         const {name,value} = e.target
         setState({...state,[name]:value})
     }
 
-    const sendInfo = (e) => {
+    const sendInfo = async (e) => {
         e.preventDefault()
-        axios.post(`/api/contacts/new`,{firstName,lastName,title,email,message})
+        props.setSpinner(true)
+        await axios.post(`/api/contacts/new`,{firstName,lastName,title,email,message}).then(() => {
+            props.setSpinner(false)
+        })
     }
 
         return(
@@ -97,4 +104,11 @@ const Contact = ({isContact}) => {
     
 }
 
-export default Contact
+// export default Contact
+
+function mapStateToProps(reduxState){
+    return reduxState
+  }
+  
+  export default connect(mapStateToProps, { setSpinner })(Contact)
+  

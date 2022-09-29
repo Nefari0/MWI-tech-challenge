@@ -13,6 +13,7 @@ export const ContactPage = styled.main`
     display:flex;
     align-items:flex-start;
     justify-content:center;
+    z-index:0;
     
     @media ${desktop} {
         position:absolute;

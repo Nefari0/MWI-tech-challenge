@@ -21,6 +21,7 @@ export const HeadOne = styled.header`
     height:100%;
     background-color:${darkGray};
     color:${white};
+    z-index:0;
 
     @media ${desktop} {
         width:${smallPixelSlice}px;
