@@ -8,7 +8,7 @@ const { desktop } = device
 export const AppContainer = styled.main`
     text-align: center;
     background-color:${black};
-    height:auto;
+    min-height:100vh;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     overflow:hidden;
@@ -22,7 +22,6 @@ export const AppContainer = styled.main`
         scrollbar-width: none;  /* Firefox */
         position:relative;
         width:${desktopW};
-        min-height:100vh;
         background-color:${darkGray};
         margin:auto;
         display: flex;
@@ -32,6 +31,7 @@ export const AppContainer = styled.main`
         
         @media ${desktop} {
             width:${mobileW};
+            min-height:150vh;
         }
     }
 
