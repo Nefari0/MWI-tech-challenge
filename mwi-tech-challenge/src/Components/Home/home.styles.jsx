@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { size,device } from "../Styles/queries";
 import { colors } from "../Styles/colors";
 const { darkGray } = colors
@@ -29,11 +29,17 @@ export const HomeContent = styled.div`
 `
 
 export const NameRow = styled.div`
+    position:absolute;
+    left:33%;
     display:flex;
     flex-direction:column;
-    flex-wrap:wrap;
     margin:auto;
-    height:150px;
+    padding-bottom:20px;
+    min-height:250px;
+    width:${mobileW};
+    tansition: all 1000ms;
+
+    @media ${desktop} {left:50px;}
 
     p {margin:2px;}
 `
