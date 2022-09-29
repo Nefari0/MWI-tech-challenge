@@ -3,7 +3,7 @@ import {useEffect,useState} from 'react'
 import Content from "./HomeCard/content.component.";
 import { HeadingOne } from "../HeadingOne/heading-one.component";
 import { HomeContent,NameRow,HomePage } from "./home.styles";
-import { Notice } from "../Styles/Notice/notice.component";
+import { Notice } from "../Notice/notice.component";
 import { colors } from "../Styles/colors";
 const { darkGray,white } = colors
 
