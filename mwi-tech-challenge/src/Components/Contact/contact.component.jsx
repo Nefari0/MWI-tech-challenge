@@ -37,6 +37,9 @@ const Contact = (props) => {
             props.setSpinner(false)
             props.setMessage(`Message from ${firstName} has been recived`)
             setState(initialState)
+        }).catch(err => {
+            props.setMessage(`THERE WAS A SERIOUS ERROR: ${err}`)
+            props.setSpinner(false)
         })
     }
 
