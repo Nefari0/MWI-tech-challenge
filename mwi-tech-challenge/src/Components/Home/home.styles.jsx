@@ -33,10 +33,11 @@ export const NameRow = styled.div`
     left:33%;
     display:flex;
     flex-direction:column;
+    justify-content:flex-start;
     margin:auto;
     padding-bottom:20px;
-    min-height:250px;
-    width:${mobileW};
+    min-height:225px;
+    width:${parseInt(mobileW.split(/([0-9]+)/)[1]) - 100 }px;
     tansition: all 1000ms;
 
     @media ${desktop} {left:50px;}

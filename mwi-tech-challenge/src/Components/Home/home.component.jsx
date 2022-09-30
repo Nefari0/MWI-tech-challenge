@@ -6,10 +6,9 @@ import Content from "./HomeCard/content.component.";
 import { HeadingOne } from "../HeadingOne/heading-one.component";
 import { HomeContent,NameRow,HomePage } from "./home.styles";
 import { colors } from "../Styles/colors";
-const { darkGray,white } = colors
+const { white } = colors
 
 const Home = (props) => {
-    const { isContact } = props
 
     const [state,setState] = useState({
         data:[],
@@ -24,11 +23,10 @@ const Home = (props) => {
         clicked:false
     })
 
-    var { nameObj1,nameObj2,data,images,newNameArray,clicked } = state
+    const { nameObj1,nameObj2,data,images,newNameArray,clicked } = state
+    const { isContact } = props
 
-    useEffect(() => {
-        intitialize()
-    },[])
+    useEffect(() => {intitialize()},[])
 
     const returnDistinctNames = i => i.replace(/(\b\S.+\b)(?=.*\1)/g ,"").trim();
 
@@ -59,16 +57,17 @@ const Home = (props) => {
 
         const newArr = nameArr.map((el,i) => {
 
-            const location = () => {return(hide ? 0 : i*20)} 
+            const x = () => {return(hide ? 0 : (i+2)**2)} 
             const hidden = () => {return(hide ? `0` : `1`)}
 
             var locations = {
-                top:`${location()}px`,
-                left:`${location()}px`,
-                color:`white`,
+                top:`${i*20}px`,
+                left:`${x()}px`,
+                color:`${white}`,
                 position:'absolute',
                 transition: "all 1000ms",
                 opacity:`${hidden()}`,
+                width:'150px'
             }
 
             return <p style={locations} key={i}>{el}</p>
