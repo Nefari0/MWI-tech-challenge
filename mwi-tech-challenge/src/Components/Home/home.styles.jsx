@@ -28,7 +28,7 @@ export const HomeContent = styled.div`
     }
 `
 
-export const NameRow = styled.div`
+export const NameList = styled.ul`
     position:absolute;
     left:33%;
     display:flex;
@@ -42,5 +42,8 @@ export const NameRow = styled.div`
 
     @media ${desktop} {left:50px;}
 
-    p {margin:2px;}
+    li {
+        margin:2px;
+        list-style:none;
+    }
 `

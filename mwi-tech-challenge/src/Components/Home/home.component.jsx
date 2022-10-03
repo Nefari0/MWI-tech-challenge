@@ -3,8 +3,9 @@ import {useEffect,useState} from 'react'
 import { connect } from 'react-redux'
 import { setMessage } from "../../dux/noticeReducer";
 import Content from "./HomeCard/content.component.";
+// import MappTheseNames from './Names/name.component'
 import { HeadingOne } from "../HeadingOne/heading-one.component";
-import { HomeContent,NameRow,HomePage } from "./home.styles";
+import { HomeContent,NameList,HomePage } from "./home.styles";
 import { colors } from "../Styles/colors";
 const { white } = colors
 
@@ -70,10 +71,10 @@ const Home = (props) => {
                 width:'150px'
             }
 
-            return <p style={locations} key={i}>{el}</p>
+            return <li style={locations} key={i}>{el}</li>
         })
 
-        return <NameRow hide={hide} >{newArr}</NameRow>
+        return <NameList hide={hide} >{newArr}</NameList>
     }
 
     return (
@@ -95,13 +96,9 @@ const Home = (props) => {
                 has already been done.
             </HeadingOne>
 
-            {/* --- Displaying names --- */}
-            {clicked ? mappTheseNames(newNameArray):mappTheseNames(newNameArray,true)} 
-
-            {clicked ? mappTheseNames(nameObj1.concat(',',nameObj2).split(','),true)
-            :
-            mappTheseNames(nameObj1.concat(',',nameObj2).split(','))}
-            
+            {/* --- Displaying Names --- */}
+            {mappTheseNames(newNameArray,!clicked)}
+            {mappTheseNames(nameObj1.concat(',',nameObj2).split(','),clicked)}
 
         </HomePage>
     )
