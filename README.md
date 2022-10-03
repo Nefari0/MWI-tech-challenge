@@ -1,1 +1,0 @@
-# MWI-tech-challenge
