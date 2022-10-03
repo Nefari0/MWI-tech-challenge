@@ -19,7 +19,12 @@ function App(props) {
 
     <AppContainer>
       <section>
-        {notice && <Notice text={notice} clearNotice={props.clearMessage} />}
+        {notice && 
+          <Notice
+            text={notice}
+            clearNotice={props.clearMessage}
+          />
+        }
 
         {isLoading && <Spinner/>}
         
@@ -29,17 +34,12 @@ function App(props) {
         />            
       
         {!isContact ?
-          <Home
-            isContact={isContact}
-            setIsContact={setIsContact}
-          />
+          <Home isContact={isContact}/>
           :
-          <Contact
-            isContact={isContact}
-            setIsContact={setIsContact}
-          />
+          <Contact isContact={isContact}/>
         }
       </section>
+      
     </AppContainer>
   );
 };
